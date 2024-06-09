@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CharacterListPage: React.FC = () => (
+const Home: React.FC = () => (
 	<div>
 		<header>
 			<h1>Marvel Characters</h1>
@@ -8,4 +8,4 @@ const CharacterListPage: React.FC = () => (
 	</div>
 );
 
-export default CharacterListPage;
+export default Home;

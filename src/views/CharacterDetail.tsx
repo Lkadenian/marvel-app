@@ -1,7 +1,7 @@
 import React from 'react';
 
-const CharacterDetailPage: React.FC = () => {
+const CharacterDetail: React.FC = () => {
 	return <div>List comics here</div>;
 };
 
-export default CharacterDetailPage;
+export default CharacterDetail;
