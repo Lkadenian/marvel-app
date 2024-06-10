@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { fetchCharacters } from '../infrastructure/api';
-import CharacterList from '../components/CharacterList';
+import { fetchCharacters } from '../../infrastructure/api';
+import Header from '../components/Header/Header';
+import CharacterList from '../components/CharacterList/CharacterList';
 
 const CharacterListPage: React.FC = () => {
 	const [characters, setCharacters] = useState();
@@ -17,9 +18,7 @@ const CharacterListPage: React.FC = () => {
 	console.log(characters);
 	return (
 		<div>
-			<header>
-				<h1>Marvel Characters</h1>
-			</header>
+			<Header />
 			<CharacterList characters={characters} />
 		</div>
 	);

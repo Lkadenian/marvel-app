@@ -11,19 +11,43 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: path.join(__dirname, 'public', 'index.html'),
+			filename: 'index.html',
 		}),
 		new Dotenv(),
 	],
 	module: {
 		rules: [
 			{
+				test: /\.css$/,
+				use: [
+					'style-loader',
+					{
+						loader: 'css-loader',
+						options: {
+							importLoaders: 1,
+							modules: {
+								localIdentName: '[name]',
+							},
+						},
+					},
+				],
+			},
+			{
 				test: /\.tsx?$/,
 				use: 'ts-loader',
 				exclude: /node_modules/,
 			},
 			{
-				test: /\.css$/,
-				use: ['style-loader', 'css-loader'],
+				test: /\.(png|svg|jpg|gif)$/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: '[name].[hash].[ext]',
+							outputPath: 'assets',
+						},
+					},
+				],
 			},
 		],
 	},
@@ -31,7 +55,6 @@ module.exports = {
 		extensions: ['.js', '.jsx', '.ts', '.tsx'],
 	},
 	devServer: {
-		compress: true,
 		port: 9000,
 	},
 };

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import CharacterCard from './CharacterCard';
+import CharacterCard from '../CharacterCard/CharacterCard';
 
 interface CharacterListProps {
 	characters: any;

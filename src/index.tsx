@@ -1,8 +1,8 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import CharacterListPage from './views/CharacterListPage';
-import CharacterDetail from './views/CharacterDetail';
+import CharacterListPage from './presentation/views/CharacterListPage';
+import CharacterDetail from './presentation/views/CharacterDetail';
 
 const container = document.getElementById('root');
 const root = createRoot(container!);
