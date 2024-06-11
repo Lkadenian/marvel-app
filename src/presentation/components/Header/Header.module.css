@@ -1,28 +1,25 @@
+@import '../../globals/global.module.css';
+
 .header {
+	composes: text-1 from global;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 10px 20px;
-	background-color: #333;
-	color: white;
+	padding: 16px 48px;
+	background-color: var(--clr-bg-secondary);
+	color: var(--clr-txt-secondary);
 }
 
 .logo {
-	height: 50px;
+	height: 44px;
 }
 
-.icon {
+.favCounter {
+	box-sizing: content-box;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 8px;
+	padding: 8px;
 	height: 30px;
-	cursor: pointer;
-}
-
-@media (max-width: 600px) {
-	.header {
-		flex-direction: column;
-		align-items: flex-start;
-	}
-
-	.logo {
-		margin-bottom: 10px;
-	}
 }
