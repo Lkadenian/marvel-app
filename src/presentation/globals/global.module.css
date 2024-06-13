@@ -1,15 +1,8 @@
 :root {
-	--clr-txt-primary: #000;
-	--clr-txt-secondary: #fff;
+	--clr-primary: #000;
+	--clr-secondary: #fff;
+	--clr-tertiary: #aaa;
 	--clr-bg-primary: #fff;
 	--clr-bg-secondary: #000;
 	--clr-marvel-red: #ec1d24;
-}
-:global .text-1 {
-	font-family: 'Roboto Condensed', sans-serif;
-	font-optical-sizing: auto;
-	font-weight: 400;
-	font-style: normal;
-	font-size: 16px;
-	line-height: 18.75px;
 }

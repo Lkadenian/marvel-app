@@ -1,4 +1,5 @@
 import { md5 } from 'js-md5';
+import { ApiResponse } from './dataTypes';
 
 const PUBLIC_KEY = process.env.PUBLIC_KEY;
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
@@ -8,7 +9,7 @@ function generateHash(timestamp: string) {
 	return md5(hashInput);
 }
 
-export async function fetchCharacters(): Promise<any> {
+export async function fetchCharacters(): Promise<ApiResponse> {
 	const BASE_URL = 'https://gateway.marvel.com/v1/public';
 	const LIMIT = '50';
 	const timeStamp = Date.now().toString();

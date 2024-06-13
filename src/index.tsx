@@ -5,8 +5,7 @@ import CharacterListPage from './presentation/views/CharacterListPage';
 import CharacterDetail from './presentation/views/CharacterDetail';
 import './presentation/globals/global.module.css';
 
-const container = document.getElementById('root');
-const root = createRoot(container!);
+const root = createRoot(document.getElementById('root'));
 
 root.render(
 	<Router>

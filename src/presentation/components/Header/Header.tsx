@@ -8,7 +8,8 @@ const Header: React.FC = () => {
 		<header className={styles.header}>
 			<img src={logo} alt="Logo" />
 			<div className={styles.favCounter}>
-				<Heart />0
+				<Heart />
+				xxx
 			</div>
 		</header>
 	);

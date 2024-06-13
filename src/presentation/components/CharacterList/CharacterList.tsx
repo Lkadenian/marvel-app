@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react';
 import CharacterCard from '../CharacterCard/CharacterCard';
+import { Character } from '../../utils/types';
+import * as styles from './CharacterList.module.css';
 
 interface CharacterListProps {
-	characters: any;
+	characters: Character[];
 }
 
 const CharacterList: React.FC<CharacterListProps> = ({ characters }) => {
-	if (!characters) return null;
 	return (
-		<div>
+		<div className={styles.listWrapper}>
 			{characters.map((character: any) => (
 				<CharacterCard key={character.id} character={character} />
 			))}
