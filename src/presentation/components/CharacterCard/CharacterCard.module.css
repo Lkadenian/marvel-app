@@ -5,16 +5,37 @@
 .cardContent {
 	height: 61px;
 	border-top: 5px solid var(--clr-marvel-red);
-	background: var(--clr-bg-secondary);
 	padding: 16px;
+	position: relative;
+	background-size: 200% 200%;
+	background-image: linear-gradient(
+		to bottom,
+		var(--clr-marvel-red) 50%,
+		var(--clr-bg-secondary) 0
+	);
+	background-position: bottom;
+	transition: background-position 0.5s;
+}
+
+.card:hover .cardContent {
+	background-position: top;
+}
+
+.cardContent::after {
+	content: '';
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	border-bottom: 13px solid var(--clr-bg-primary);
+	border-left: 13px solid transparent;
 }
 
 .cardNameWrapper {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	fill: var(--clr-marvel-red);
 }
-
 .cardName {
 	text-transform: uppercase;
 	font-size: 14px;
@@ -25,4 +46,13 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+}
+
+.heartWrapper {
+	transition: 0.7s;
+	fill: var(--clr-marvel-red);
+}
+
+.card:hover .heartWrapper {
+	fill: var(--clr-secondary);
 }

@@ -15,6 +15,7 @@ const CharacterListPage: React.FC = () => {
 			const result = await fetchCharacters();
 			setCharacters(
 				result.data.results.map((result) => ({
+					id: result.id,
 					name: result.name,
 					thumbnail: `${result.thumbnail.path}/${cardImage}.${result.thumbnail.extension}`,
 					isLiked: false,
