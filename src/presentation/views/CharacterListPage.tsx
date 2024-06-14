@@ -1,40 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { useCharacters } from '../../context/context';
 import { fetchCharacters } from '../../infrastructure/api';
 import Header from '../components/Header/Header';
 import CharacterList from '../components/CharacterList/CharacterList';
 import SearchBar from '../components/SearchBar/SearchBar';
 import ContentWrapper from '../components/ContentWrapper/ContentWrapper';
-import { Character } from '../utils/types';
-import { cardImage } from '../../infrastructure/constants';
 
 const CharacterListPage: React.FC = () => {
-	const [characters, setCharacters] = useState<Character[]>();
+	const { characters, setCharacters } = useCharacters();
 
 	useEffect(() => {
-		const fetchData = async () => {
-			const result = await fetchCharacters();
-			setCharacters(
-				result.data.results.map((result) => ({
-					id: result.id,
-					name: result.name,
-					thumbnail: `${result.thumbnail.path}/${cardImage}.${result.thumbnail.extension}`,
-					isLiked: false,
-				})),
-			);
-		};
+		fetchCharacters().then(setCharacters);
+	}, [setCharacters]);
 
-		fetchData();
-	}, []);
-
-	if (!characters || characters.length === 0) {
-		return null;
-	}
 	return (
 		<>
 			<Header />
 			<ContentWrapper>
-				<SearchBar />
-				<CharacterList characters={characters} />
+				<SearchBar results={characters.length} />
+				{characters && <CharacterList characters={characters} />}
 			</ContentWrapper>
 		</>
 	);

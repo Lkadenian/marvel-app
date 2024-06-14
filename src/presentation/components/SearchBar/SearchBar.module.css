@@ -1,9 +1,11 @@
 .searchBar {
 	padding: 12px 0;
 	position: relative;
+	text-transform: uppercase;
 }
 
 .searchInput {
+	font-family: 'Roboto Condensed';
 	font-size: 16px;
 	line-height: 18.75px;
 	width: 100%;
@@ -28,8 +30,8 @@
 
 .searchInput::placeholder {
 	color: var(--clr-tertiary);
-	text-transform: uppercase;
 	font-family: 'Roboto Condensed';
+	text-transform: uppercase;
 }
 .inputWrapper {
 	position: relative;

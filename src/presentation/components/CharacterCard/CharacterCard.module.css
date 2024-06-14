@@ -32,7 +32,7 @@
 
 .cardNameWrapper {
 	display: flex;
-	align-items: center;
+	align-items: left;
 	justify-content: space-between;
 	fill: var(--clr-marvel-red);
 }

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import CharacterCard from '../CharacterCard/CharacterCard';
 import { Character } from '../../utils/types';
 import * as styles from './CharacterList.module.css';

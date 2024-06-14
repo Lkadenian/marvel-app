@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import * as styles from './Searchbar.module.css';
 
-const SearchBar: React.FC = () => {
+interface SearchBarProps {
+	results: number;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ results }) => {
 	const [searchTerm, setSearchTerm] = useState('');
 
 	const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,7 +22,7 @@ const SearchBar: React.FC = () => {
 					onChange={handleSearchChange}
 				/>
 			</div>
-			<div className={styles.results}>xxx</div>
+			<div className={styles.results}>{results} results</div>
 		</div>
 	);
 };
