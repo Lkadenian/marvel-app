@@ -1,11 +1,10 @@
 import React, { createContext, useState, useContext, ReactNode } from 'react';
-import { Character } from '../presentation/utils/types';
 
 interface CharacterContextType {
-	characters: Character[];
+	favorites: string[];
 	//addFavorite: (character: Character) => void;
 	//removeFavorite: (character: Character) => void;
-	setCharacters: (character: Character[]) => void;
+	setFavorites: (favorites: string[]) => void;
 }
 
 const CharacterContext = createContext<CharacterContextType | undefined>(
@@ -15,7 +14,7 @@ const CharacterContext = createContext<CharacterContextType | undefined>(
 export const CharacterProvider: React.FC<{ children: ReactNode }> = ({
 	children,
 }) => {
-	const [characters, setCharacters] = useState<Character[]>([]);
+	const [favorites, setFavorites] = useState<string[]>([]);
 
 	/*const addFavorite = (character: Character) => {
 		//setFavorites();
@@ -26,14 +25,13 @@ export const CharacterProvider: React.FC<{ children: ReactNode }> = ({
 	};
 */
 	return (
-		<CharacterContext.Provider value={{ characters, setCharacters }}>
+		<CharacterContext.Provider value={{ favorites, setFavorites }}>
 			{children}
 		</CharacterContext.Provider>
 	);
 };
 
 export const useCharacters = () => {
-	console.log('useCharacters');
 	const context = useContext(CharacterContext);
 	if (context === undefined) {
 		throw new Error(

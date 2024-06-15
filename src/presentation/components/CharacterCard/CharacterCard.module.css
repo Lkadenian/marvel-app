@@ -2,7 +2,7 @@
 	width: 188px;
 }
 
-.cardContent {
+.content {
 	height: 61px;
 	border-top: 5px solid var(--clr-marvel-red);
 	padding: 16px;
@@ -17,11 +17,11 @@
 	transition: background-position 0.5s;
 }
 
-.card:hover .cardContent {
+.card:hover .content {
 	background-position: top;
 }
 
-.cardContent::after {
+.content::after {
 	content: '';
 	position: absolute;
 	bottom: 0px;
@@ -30,13 +30,13 @@
 	border-left: 13px solid transparent;
 }
 
-.cardNameWrapper {
+.nameWrapper {
 	display: flex;
-	align-items: left;
 	justify-content: space-between;
 	fill: var(--clr-marvel-red);
 }
-.cardName {
+
+.name {
 	text-transform: uppercase;
 	font-size: 14px;
 	font-weight: 400;

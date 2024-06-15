@@ -1,26 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useCharacters } from '../../context/context';
+import { fetchCharacterById } from '../../infrastructure/api';
+import Header from '../components/Header/Header';
+import ContentWrapper from '../components/ContentWrapper/ContentWrapper';
+import { Character } from '../utils/types';
+import CharacterSection from '../components/CharacterSection/CharacterSection';
 
 const CharacterDetailPage: React.FC = () => {
-	const { characterId } = useParams<{ characterId: string }>();
-	const { characters } = useCharacters();
-	const character = characters.find(
-		(char) => char.id === parseInt(characterId),
-	);
+	const { id } = useParams<{ id: string }>();
+	const [character, setCharacter] = useState<Character>();
 
-	if (!character) {
-		return <div>Character not found</div>;
-	}
+	useEffect(() => {
+		fetchCharacterById(id).then(setCharacter);
+	}, [setCharacter]);
+
+	if (!character) return null;
 
 	return (
-		<div>
-			<h1>{character.name}</h1>
-			<img src={character.thumbnail} alt={character.name} />
-			<p>Description of the character...</p>
-			{/* List comics here */}
-		</div>
+		<>
+			<Header />
+			<CharacterSection character={character} />
+			<ContentWrapper>
+				<></>
+			</ContentWrapper>
+		</>
 	);
 };
 
 export default CharacterDetailPage;
+//<ComicsSection character={character.}>
