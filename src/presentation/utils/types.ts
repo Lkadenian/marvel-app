@@ -1,8 +1,16 @@
 export interface Character {
-	id: number;
+	id: string;
 	name: string;
 	thumbnail: string;
 	description: string;
+	comics?: Comic[];
 }
 
-export type Favorites = number[];
+export interface Comic {
+	id: string;
+	title: string;
+	year: string;
+	thumbnail: string;
+}
+
+export type Favorites = string[];

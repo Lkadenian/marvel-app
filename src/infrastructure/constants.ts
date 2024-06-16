@@ -1,2 +1,9 @@
-export const cardImage = 'standard_xlarge';
-export const detailImage = 'detail';
+export const cardImageVariant = 'standard_xlarge';
+export const detailImageVariant = 'detail';
+export const comicImageVariant = 'portrait_fantastic';
+export const publicKey = process.env.PUBLIC_KEY;
+export const privateKey = process.env.PRIVATE_KEY;
+export const baseUrl = 'https://gateway.marvel.com/v1/public';
+export const characterFetchLimit = '50';
+export const comicsFetchLimit = '20';
+export const comicsOrderBy = 'onsaleDate';
