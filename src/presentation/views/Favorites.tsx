@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import Header from '../components/Header/Header';
+import CharacterListSection from '../layouts/CharaceterListSection/CharacterListSection';
 import CharacterList from '../components/CharacterList/CharacterList';
 import SearchBar from '../components/SearchBar/SearchBar';
-import ContentWrapper from '../components/ContentWrapper/ContentWrapper';
 import { useFavorites } from '../../context/favorites';
 
 const Favorites: React.FC = () => {
@@ -24,21 +23,18 @@ const Favorites: React.FC = () => {
 	}, [characters, searchQuery]);
 
 	return (
-		<>
-			<Header />
-			<ContentWrapper>
-				<h1>Favorites</h1>
-				{characters && (
-					<>
-						<SearchBar
-							resultCount={characters.length}
-							value={searchQuery}
-						/>
-						<CharacterList characters={characters} />
-					</>
-				)}
-			</ContentWrapper>
-		</>
+		<CharacterListSection>
+			{characters && (
+				<>
+					<h1>Favorites</h1>
+					<SearchBar
+						resultCount={characters.length}
+						value={searchQuery}
+					/>
+					<CharacterList characters={characters} />
+				</>
+			)}
+		</CharacterListSection>
 	);
 };
 

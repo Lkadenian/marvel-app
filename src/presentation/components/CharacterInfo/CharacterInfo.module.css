@@ -1,26 +1,3 @@
-.container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 320px;
-	background-color: var(--clr-bg-secondary);
-}
-
-.container ::after {
-	content: '';
-	position: absolute;
-	bottom: 0px;
-	right: 0px;
-	border-bottom: 24px solid var(--clr-bg-primary);
-	border-left: 24px solid transparent;
-}
-
-.characterSection {
-	width: var(--inner-container-width);
-	height: 100%;
-	display: flex;
-}
-
 .info {
 	padding: 96px 0 0 48px;
 	width: 100%;

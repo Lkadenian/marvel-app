@@ -36,25 +36,3 @@
 .comicListContainer::-webkit-scrollbar-thumb {
 	background: var(--clr-marvel-red);
 }
-
-.comic {
-	min-width: 180px;
-	width: 180px;
-	display: flex;
-	flex-direction: column;
-	box-sizing: border-box;
-}
-
-.title {
-	padding-top: 12px;
-	font-size: 16px;
-	line-height: 18.75px;
-	font-weight: 500;
-}
-
-.year {
-	padding-top: 8px;
-	font-size: 12px;
-	line-height: 14.06px;
-	font-weight: 400;
-}
