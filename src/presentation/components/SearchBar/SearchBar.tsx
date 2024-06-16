@@ -3,11 +3,12 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import * as styles from './Searchbar.module.css';
 
 interface SearchBarProps {
+	value: string;
 	resultCount: number;
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({ resultCount }) => {
-	const [searchTerm, setSearchTerm] = useState('');
+const SearchBar: React.FC<SearchBarProps> = ({ value, resultCount }) => {
+	const [, setSearchTerm] = useState('');
 	const navigate = useNavigate();
 	const [, setSearchParams] = useSearchParams();
 
@@ -25,7 +26,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ resultCount }) => {
 					className={styles.searchInput}
 					type="search"
 					placeholder="Search a character..."
-					value={searchTerm}
+					value={value}
 					onChange={handleSearchChange}
 				/>
 			</div>

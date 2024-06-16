@@ -1,18 +1,12 @@
-import React, { useEffect } from 'react';
-import { fetchCharacters } from '../../infrastructure/api';
+import React from 'react';
 import Header from '../components/Header/Header';
 import CharacterList from '../components/CharacterList/CharacterList';
 import SearchBar from '../components/SearchBar/SearchBar';
 import ContentWrapper from '../components/ContentWrapper/ContentWrapper';
-import { useCharacters } from '../../context/characters';
+import useCharacterSearch from '../hooks/useCharacterSearch';
 
 const Characters: React.FC = () => {
-	const { initialCharacterList: characters, setInitialCharacterList } =
-		useCharacters();
-
-	useEffect(() => {
-		!characters.length && fetchCharacters().then(setInitialCharacterList);
-	}, []);
+	const { characters, searchQuery } = useCharacterSearch(600);
 
 	return (
 		<>
@@ -20,7 +14,10 @@ const Characters: React.FC = () => {
 			<ContentWrapper>
 				{characters && (
 					<>
-						<SearchBar resultCount={characters.length} />
+						<SearchBar
+							resultCount={characters.length}
+							value={searchQuery}
+						/>
 						<CharacterList characters={characters} />
 					</>
 				)}

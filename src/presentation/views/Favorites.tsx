@@ -30,7 +30,10 @@ const Favorites: React.FC = () => {
 				<h1>Favorites</h1>
 				{characters && (
 					<>
-						<SearchBar resultCount={characters.length} />
+						<SearchBar
+							resultCount={characters.length}
+							value={searchQuery}
+						/>
 						<CharacterList characters={characters} />
 					</>
 				)}

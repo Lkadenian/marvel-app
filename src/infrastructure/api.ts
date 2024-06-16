@@ -10,8 +10,15 @@ import { mapCharacterData } from './mappers/characters/CharacterMapper';
 import { mapComicData } from './mappers/comics/ComicMapper';
 import { fetchData, generateUrl } from './utils/apiHelpers';
 
-export const fetchCharacters = async (): Promise<Character[]> => {
-	const url = generateUrl('/characters', { limit: characterFetchLimit });
+export const fetchCharacters = async (
+	searchQuery?: string,
+): Promise<Character[]> => {
+	const queryParams = {
+		limit: characterFetchLimit,
+		...(searchQuery && { nameStartsWith: searchQuery }),
+	};
+
+	const url = generateUrl('/characters', queryParams);
 	const responseJson: ApiResponse = await fetchData(url);
 	return mapCharacterData(responseJson.data.results, 'card');
 };
