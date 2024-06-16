@@ -6,7 +6,9 @@ import * as styles from './Header.module.css';
 const Header: React.FC = () => {
 	return (
 		<header className={styles.header}>
-			<img src={logo} alt="Logo" />
+			<a href="/">
+				<img src={logo} alt="Logo" />
+			</a>
 			<div className={styles.favCounter}>
 				<Heart />
 				xxx

@@ -3,11 +3,11 @@ import { Character } from '../../utils/types';
 import * as styles from './CharacterSection.module.css';
 import Heart from '../Heart/Heart';
 
-interface CharacterCardProps {
+interface CharacterSectionProps {
 	character: Character;
 }
 
-const CharacterSection: React.FC<CharacterCardProps> = ({ character }) => {
+const CharacterSection: React.FC<CharacterSectionProps> = ({ character }) => {
 	const { name, description, thumbnail } = character;
 
 	return (

@@ -16,13 +16,14 @@
 }
 
 .characterSection {
-	width: 960px;
+	width: var(--inner-container-width);
 	height: 100%;
 	display: flex;
 }
 
 .info {
 	padding: 96px 0 0 48px;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 }

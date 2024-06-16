@@ -1,6 +1,6 @@
 export const cardImageVariant = 'standard_xlarge';
 export const detailImageVariant = 'detail';
-export const comicImageVariant = 'portrait_fantastic';
+export const comicImageVariant = 'portrait_incredible';
 export const publicKey = process.env.PUBLIC_KEY;
 export const privateKey = process.env.PRIVATE_KEY;
 export const baseUrl = 'https://gateway.marvel.com/v1/public';
