@@ -4,7 +4,7 @@ import { fetchCharacterById } from '../../infrastructure/api';
 import Header from '../components/Header/Header';
 import { Character } from '../utils/types';
 import CharacterSection from '../components/CharacterSection/CharacterSection';
-import ComicsSection from '../components/ComicsSection/ComicsSection';
+import ComicListSection from '../components/ComicListSection/ComicListSection';
 
 const CharacterDetailPage: React.FC = () => {
 	const { id } = useParams<{ id: string }>();
@@ -20,7 +20,7 @@ const CharacterDetailPage: React.FC = () => {
 		<>
 			<Header />
 			<CharacterSection character={character} />
-			<ComicsSection comics={character.comics} />
+			<ComicListSection comics={character.comics} />
 		</>
 	);
 };

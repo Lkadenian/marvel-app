@@ -12,7 +12,7 @@ const CharacterSection: React.FC<CharacterSectionProps> = ({ character }) => {
 	const { id, name, description, thumbnail } = character;
 	const { isFavorite, toggleFavorite } = useFavorites();
 
-	const handleClick = () => toggleFavorite(id);
+	const handleClick = () => toggleFavorite(character);
 
 	return (
 		<div className={styles.container}>

@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { fetchCharacters } from '../../infrastructure/api';
 import Header from '../components/Header/Header';
 import CharacterList from '../components/CharacterList/CharacterList';
 import SearchBar from '../components/SearchBar/SearchBar';
 import ContentWrapper from '../components/ContentWrapper/ContentWrapper';
-import { Character } from '../utils/types';
+import { useCharacters } from '../../context/characters';
 
-const CharacterListPage: React.FC = () => {
-	const [characters, setCharacters] = useState<Character[]>();
+const Characters: React.FC = () => {
+	const { initialCharacterList: characters, setInitialCharacterList } =
+		useCharacters();
 
 	useEffect(() => {
-		fetchCharacters().then(setCharacters);
-	}, [setCharacters]);
+		!characters.length && fetchCharacters().then(setInitialCharacterList);
+	}, []);
 
 	return (
 		<>
@@ -19,7 +20,7 @@ const CharacterListPage: React.FC = () => {
 			<ContentWrapper>
 				{characters && (
 					<>
-						<SearchBar results={characters.length} />
+						<SearchBar resultCount={characters.length} />
 						<CharacterList characters={characters} />
 					</>
 				)}
@@ -28,4 +29,4 @@ const CharacterListPage: React.FC = () => {
 	);
 };
 
-export default CharacterListPage;
+export default Characters;

@@ -1,17 +1,17 @@
 import React from 'react';
 import { Comic } from '../../utils/types';
-import * as styles from './ComicsSection.module.css';
+import * as styles from './ComicListSection.module.css';
 
-interface ComicsSectionProps {
+interface ComicListSectionProps {
 	comics: Comic[];
 }
 
-const ComicsSection: React.FC<ComicsSectionProps> = ({ comics }) => {
+const ComicListSection: React.FC<ComicListSectionProps> = ({ comics }) => {
 	return (
 		<div className={styles.container}>
-			<div className={styles.comicsSection}>
-				<h2 className={styles.header}>Comics</h2>
-				<div className={styles.comicsContainer}>
+			<div className={styles.comicListSection}>
+				<h2 className={styles.header}>comicList</h2>
+				<div className={styles.comicListContainer}>
 					{comics.map((comic) => (
 						<div className={styles.comic}>
 							<img src={comic.thumbnail} alt={comic.title} />
@@ -29,4 +29,4 @@ const ComicsSection: React.FC<ComicsSectionProps> = ({ comics }) => {
 	);
 };
 
-export default ComicsSection;
+export default ComicListSection;

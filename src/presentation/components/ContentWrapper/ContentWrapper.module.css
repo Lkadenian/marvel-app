@@ -1,3 +1,10 @@
 .contentWrapper {
 	padding: 48px;
 }
+.contentWrapper > h1 {
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 32px;
+	line-height: 37.5px;
+	padding-bottom: 24px;
+}

@@ -4,7 +4,7 @@
 	align-items: center;
 }
 
-.comicsSection {
+.ComicListSection {
 	padding: 48px 0;
 	width: var(--inner-container-width);
 }
@@ -16,7 +16,7 @@
 	text-transform: uppercase;
 }
 
-.comicsContainer {
+.comicListContainer {
 	display: flex;
 	padding: 28px 0 24px 0;
 	flex-direction: row;
@@ -24,16 +24,16 @@
 	overflow-x: scroll;
 }
 
-.comicsContainer::-webkit-scrollbar {
+.comicListContainer::-webkit-scrollbar {
 	width: 240px;
 	height: 4px;
 }
 
-.comicsContainer::-webkit-scrollbar-track {
+.comicListContainer::-webkit-scrollbar-track {
 	background-color: var(--clr-bg-tertiary);
 }
 
-.comicsContainer::-webkit-scrollbar-thumb {
+.comicListContainer::-webkit-scrollbar-thumb {
 	background: var(--clr-marvel-red);
 }
 

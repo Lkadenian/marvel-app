@@ -2,6 +2,7 @@ import React from 'react';
 import Heart from '../Heart/Heart';
 import { Character } from '../../utils/types';
 import { useFavorites } from '../../../context/favorites';
+import { Link } from 'react-router-dom';
 import * as styles from './CharacterCard.module.css';
 
 interface CharacterCardProps {
@@ -12,19 +13,22 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
 	const { id, name, thumbnail } = character;
 	const { isFavorite, toggleFavorite } = useFavorites();
 
-	const handleClick = () => toggleFavorite(id);
+	const handleClick = () => toggleFavorite(character);
 
 	return (
 		<div className={styles.card}>
-			<a href={`/character/${id}`}>
+			<Link to={`/character/${id}`}>
 				<img src={thumbnail} alt={name} />
-			</a>
+			</Link>
 			<div className={styles.content}>
 				<div className={styles.nameWrapper}>
 					<h2 className={styles.name}>{name}</h2>
-					<a onClick={handleClick} className={styles.heartWrapper}>
+					<button
+						onClick={handleClick}
+						className={styles.heartWrapper}
+					>
 						<Heart isFilled={isFavorite(id)} small />
-					</a>
+					</button>
 				</div>
 			</div>
 		</div>

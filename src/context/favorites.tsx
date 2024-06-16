@@ -1,10 +1,11 @@
 import React, { createContext, useState, useContext, ReactNode } from 'react';
+import { Character } from '../presentation/utils/types';
 
 interface CharacterContextType {
-	favorites: string[];
+	favorites: Character[];
 	favoritesCount: number;
 	isFavorite: (id: string) => boolean;
-	toggleFavorite: (id: string) => void;
+	toggleFavorite: (character: Character) => void;
 }
 
 const CharacterContext = createContext<CharacterContextType | undefined>(
@@ -14,17 +15,22 @@ const CharacterContext = createContext<CharacterContextType | undefined>(
 export const FavoritesProvider: React.FC<{ children: ReactNode }> = ({
 	children,
 }) => {
-	const [favorites, setFavorites] = useState<string[]>([]);
-	console.log(favorites);
+	const [favorites, setFavorites] = useState<Character[]>([]);
 
 	const favoritesCount = favorites.length;
 
-	const isFavorite = (id: string) => favorites.includes(id);
+	const isFavorite = (id: string) =>
+		favorites.some((character) => character.id === id);
 
-	const toggleFavorite = (id: string) => {
-		isFavorite(id)
-			? setFavorites((prev) => prev.filter((item) => item !== id))
-			: setFavorites((prev) => [...prev, id]);
+	const toggleFavorite = (character: Character) => {
+		isFavorite(character.id)
+			? setFavorites((prev) =>
+					prev.filter((item) => item.id !== character.id),
+				)
+			: setFavorites((prev) => [
+					...prev,
+					{ ...character, comics: undefined },
+				]);
 	};
 
 	return (
