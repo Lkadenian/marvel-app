@@ -1,15 +1,15 @@
 import React from 'react';
 
 interface HeartProps {
-	filled?: boolean;
+	isFilled?: boolean;
 	small?: boolean;
 }
 
-const Heart: React.FC<HeartProps> = ({ filled = false, small = false }) => {
+const Heart: React.FC<HeartProps> = ({ isFilled = false, small = false }) => {
 	return (
 		<>
 			{!small ? (
-				!filled ? (
+				!isFilled ? (
 					<svg
 						width="24"
 						height="22"
@@ -31,14 +31,14 @@ const Heart: React.FC<HeartProps> = ({ filled = false, small = false }) => {
 						xmlns="http://www.w3.org/2000/svg"
 					>
 						<path
-							fill-rule="evenodd"
-							clip-rule="evenodd"
+							fillRule="evenodd"
+							clipRule="evenodd"
 							d="M12 3.63869L6 -0.00292969L0 3.63869V11.4422L12 21.6734L24 11.4422V3.63869L18 -0.00292969L12 3.63869Z"
 							fill="#EC1D24"
 						/>
 					</svg>
 				)
-			) : !filled ? (
+			) : !isFilled ? (
 				<svg
 					width="15"
 					height="14"
@@ -53,15 +53,15 @@ const Heart: React.FC<HeartProps> = ({ filled = false, small = false }) => {
 				</svg>
 			) : (
 				<svg
-					width="13"
-					height="12"
+					width="15"
+					height="14"
 					viewBox="0 0 13 12"
 					fill="inherited"
 					xmlns="http://www.w3.org/2000/svg"
 				>
 					<path
-						fill-rule="evenodd"
-						clip-rule="evenodd"
+						fillRule="evenodd"
+						clipRule="evenodd"
 						d="M6.5 2.31321L3.5 0.492401L0.5 2.31321V6.21494L6.5 11.3306L12.5 6.21494V2.31321L9.5 0.492401L6.5 2.31321Z"
 						fill="inherited"
 					/>

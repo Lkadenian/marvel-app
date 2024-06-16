@@ -1,6 +1,7 @@
 import React from 'react';
 import Heart from '../Heart/Heart';
 import { Character } from '../../utils/types';
+import { useFavorites } from '../../../context/favorites';
 import * as styles from './CharacterCard.module.css';
 
 interface CharacterCardProps {
@@ -9,6 +10,9 @@ interface CharacterCardProps {
 
 const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
 	const { id, name, thumbnail } = character;
+	const { isFavorite, toggleFavorite } = useFavorites();
+
+	const handleClick = () => toggleFavorite(id);
 
 	return (
 		<div className={styles.card}>
@@ -18,9 +22,9 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
 			<div className={styles.content}>
 				<div className={styles.nameWrapper}>
 					<h2 className={styles.name}>{name}</h2>
-					<span className={styles.heartWrapper}>
-						<Heart small />
-					</span>
+					<a onClick={handleClick} className={styles.heartWrapper}>
+						<Heart isFilled={isFavorite(id)} small />
+					</a>
 				</div>
 			</div>
 		</div>

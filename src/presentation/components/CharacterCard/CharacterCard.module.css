@@ -49,6 +49,7 @@
 }
 
 .heartWrapper {
+	cursor: pointer;
 	transition: 0.7s;
 	fill: var(--clr-marvel-red);
 }
