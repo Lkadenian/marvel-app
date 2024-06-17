@@ -1,6 +1,9 @@
 import { Result } from './characterDataTypes';
-import { cardImageVariant, detailImageVariant } from '../../constants';
-import { Character, Comic } from '../../../presentation/utils/types';
+import {
+	cardImageVariant,
+	detailImageVariant,
+} from '@infrastructure/constants';
+import { Character, Comic } from '@utils/types';
 
 export const mapCharacterData = (
 	data: Result[],

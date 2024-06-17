@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { fetchCharacters } from '../../infrastructure/api';
-import { useCharacters } from '../../context/characters';
+import { fetchCharacters } from '@infrastructure/api';
+import { useCharacters } from '@context/characters';
 import { useDebounce } from 'use-debounce';
 
 const useCharacterSearch = (delay?: number) => {

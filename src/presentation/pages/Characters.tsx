@@ -1,8 +1,7 @@
 import React from 'react';
-import useCharacterSearch from '../hooks/useCharacterSearch';
-import CharacterListSection from '../layouts/CharaceterListSection/CharacterListSection';
-import CharacterList from '../components/CharacterList/CharacterList';
-import SearchBar from '../components/SearchBar/SearchBar';
+import useCharacterSearch from '@hooks/useCharacterSearch';
+import { CharacterListSection } from '@layouts';
+import { CharacterList, SearchBar } from '@components';
 
 const Characters: React.FC = () => {
 	const { characters, searchQuery } = useCharacterSearch(600);

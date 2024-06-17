@@ -1,6 +1,6 @@
 import React from 'react';
-import CharacterCard from '../CharacterCard/CharacterCard';
-import { Character } from '../../utils/types';
+import { CharacterCard } from '@components';
+import { Character } from '@utils/types';
 import * as styles from './CharacterList.module.css';
 
 interface CharacterListProps {

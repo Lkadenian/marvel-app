@@ -1,5 +1,5 @@
 import { md5 } from 'js-md5';
-import { publicKey, privateKey, baseUrl } from '../constants';
+import { publicKey, privateKey, baseUrl } from '@infrastructure/constants';
 
 export const generateHash = (timestamp: string) => {
 	const hashInput = timestamp + privateKey + publicKey;

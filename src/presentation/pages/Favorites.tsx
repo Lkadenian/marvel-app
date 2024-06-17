@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import CharacterListSection from '../layouts/CharaceterListSection/CharacterListSection';
-import CharacterList from '../components/CharacterList/CharacterList';
-import SearchBar from '../components/SearchBar/SearchBar';
-import { useFavorites } from '../../context/favorites';
+import { useFavorites } from '@context/favorites';
+import { CharacterList, SearchBar } from '@components';
+import { CharacterListSection } from '@layouts';
 
 const Favorites: React.FC = () => {
 	const { favorites } = useFavorites();

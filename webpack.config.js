@@ -57,6 +57,21 @@ module.exports = {
 	},
 	resolve: {
 		extensions: ['.js', '.jsx', '.ts', '.tsx'],
+		alias: {
+			'@assets': path.resolve(__dirname, 'src/presentation/assets/'),
+			'@components': path.resolve(
+				__dirname,
+				'src/presentation/components/',
+			),
+			'@layouts': path.resolve(__dirname, 'src/presentation/layouts/'),
+			'@hooks': path.resolve(__dirname, 'src/presentation/hooks/'),
+			'@globals': path.resolve(__dirname, 'src/presentation/globals/'),
+			'@pages': path.resolve(__dirname, 'src/presentation/pages/'),
+			'@utils': path.resolve(__dirname, 'src/presentation/utils/'),
+			'@context': path.resolve(__dirname, 'src/context/'),
+			'@mappers': path.resolve(__dirname, 'src/infrastructure/mappers/'),
+			'@infrastructure': path.resolve(__dirname, 'src/infrastructure/'),
+		},
 	},
 	devServer: {
 		port: 9000,

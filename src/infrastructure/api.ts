@@ -1,6 +1,6 @@
 import { ApiResponse } from './mappers/characters/characterDataTypes';
 import { ApiComicResponse } from './mappers/comics/comicDataTypes';
-import { Character, Comic } from '../presentation/utils/types';
+import { Character, Comic } from '@utils/types';
 import {
 	characterFetchLimit,
 	comicsFetchLimit,

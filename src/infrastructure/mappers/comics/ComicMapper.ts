@@ -1,6 +1,6 @@
 import { Result, DateElement, DateType } from './comicDataTypes';
-import { comicImageVariant } from '../../constants';
-import { Comic } from '../../../presentation/utils/types';
+import { comicImageVariant } from '@infrastructure/constants';
+import { Comic } from '@utils/types';
 
 export const mapComicData = (data: Result[]): Comic[] => {
 	const getOnSaleYear = (dates: DateElement[]) => {

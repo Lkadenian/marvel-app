@@ -1,7 +1,7 @@
 import React from 'react';
-import Heart from '../Heart/Heart';
-import { Character } from '../../utils/types';
-import { useFavorites } from '../../../context/favorites';
+import { Heart } from '@components';
+import { Character } from '@utils/types';
+import { useFavorites } from '@context/favorites';
 import { Link } from 'react-router-dom';
 import * as styles from './CharacterCard.module.css';
 

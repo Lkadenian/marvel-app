@@ -1,6 +1,5 @@
 import React from 'react';
-import Header from '../../components/Header/Header';
-import ContentWrapper from '../../components/ContentWrapper/ContentWrapper';
+import { Header, ContentWrapper } from '@components';
 
 interface CharacterListSectionProps {
 	children: React.ReactNode;
