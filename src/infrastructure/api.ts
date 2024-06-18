@@ -13,8 +13,6 @@ import { fetchData, generateUrl } from './utils/apiHelpers';
 export const fetchCharacters = async (
 	searchQuery?: string,
 ): Promise<Character[]> => {
-	console.log('fetchCharacters');
-
 	const queryParams = {
 		limit: characterFetchLimit,
 		...(searchQuery && { nameStartsWith: searchQuery }),
@@ -26,7 +24,6 @@ export const fetchCharacters = async (
 };
 
 export const fetchCharacterById = async (id: string): Promise<Character> => {
-	console.log('fetchCharacterById');
 	const url = generateUrl(`/characters/${id}`);
 	const responseJson: ApiResponse = await fetchData(url);
 	const comics = await fetchComicsByCharacterId(id);
@@ -36,8 +33,6 @@ export const fetchCharacterById = async (id: string): Promise<Character> => {
 export const fetchComicsByCharacterId = async (
 	id: string,
 ): Promise<Comic[]> => {
-	console.log('fetchComicsByCharacterId');
-
 	const url = generateUrl(`/characters/${id}/comics`, {
 		limit: comicsFetchLimit,
 		orderBy: comicsOrderBy,

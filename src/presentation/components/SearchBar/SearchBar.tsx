@@ -1,33 +1,47 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import * as styles from './Searchbar.module.css';
+import { useDebounce } from 'use-debounce';
 
 interface SearchBarProps {
-	value: string;
 	resultCount: number;
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({ value, resultCount }) => {
-	const [, setSearchTerm] = useState('');
+const SearchBar: React.FC<SearchBarProps> = ({ resultCount }) => {
+	const [searchParams] = useSearchParams();
+	const searchText = searchParams.get('search') || '';
+	const [value, setValue] = useState('');
+	const [searchValue, setSearchValue] = useState('');
 	const navigate = useNavigate();
-	const [, setSearchParams] = useSearchParams();
-
+	const isInitialMount = useRef(true);
+	const [debouncedValue] = useDebounce(searchValue, 600);
 	const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const value = event.target.value;
-		setSearchTerm(value);
-		setSearchParams({ search: value });
-		navigate(value ? `?search=${value}` : '');
+		setValue(value);
+		setSearchValue(value);
 	};
+
+	useEffect(() => {
+		if (isInitialMount.current) {
+			isInitialMount.current = false;
+			return;
+		}
+		navigate(debouncedValue ? `?search=${debouncedValue}` : '');
+	}, [debouncedValue]);
+
+	useEffect(() => {
+		setValue(searchText);
+	}, [searchText]);
 
 	return (
 		<div className={styles.searchBar}>
 			<div className={styles.inputWrapper}>
 				<input
 					className={styles.searchInput}
-					type="search"
+					type="text"
 					placeholder="Search a character..."
-					value={value}
 					onChange={handleSearchChange}
+					value={value}
 				/>
 			</div>
 			<div className={styles.results}>{resultCount} results</div>

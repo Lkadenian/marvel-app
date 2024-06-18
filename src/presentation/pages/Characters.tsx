@@ -4,16 +4,13 @@ import { CharacterListSection } from '@layouts';
 import { CharacterList, SearchBar } from '@components';
 
 const Characters: React.FC = () => {
-	const { characters, searchQuery } = useCharactersFetch(600);
+	const { characters } = useCharactersFetch();
 
 	return (
 		<CharacterListSection>
 			{characters && (
 				<>
-					<SearchBar
-						resultCount={characters.length}
-						value={searchQuery}
-					/>
+					<SearchBar resultCount={characters.length} />
 					<CharacterList characters={characters} />
 				</>
 			)}

@@ -7,7 +7,6 @@ import { CharacterListSection } from '@layouts';
 const Favorites: React.FC = () => {
 	const { favorites } = useFavorites();
 	const [characters, setCharacters] = useState(favorites);
-
 	const [searchParams] = useSearchParams();
 	const searchQuery = searchParams.get('search') || '';
 
@@ -19,17 +18,14 @@ const Favorites: React.FC = () => {
 					.includes(searchQuery.toLowerCase()),
 			),
 		);
-	}, [characters, searchQuery]);
+	}, [searchQuery]);
 
 	return (
 		<CharacterListSection>
 			{characters && (
 				<>
 					<h1>Favorites</h1>
-					<SearchBar
-						resultCount={characters.length}
-						value={searchQuery}
-					/>
+					<SearchBar resultCount={characters.length} />
 					<CharacterList characters={characters} />
 				</>
 			)}
