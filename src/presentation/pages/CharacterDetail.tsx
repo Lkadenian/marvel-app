@@ -16,7 +16,7 @@ const CharacterDetailPage: React.FC = () => {
 		fetchCharacterById(id)
 			.then(setCharacter)
 			.then(() => setIsLoading(false));
-	}, [setCharacter]);
+	}, []);
 
 	return (
 		<>

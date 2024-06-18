@@ -13,32 +13,30 @@ const useCharactersFetch = (delay?: number) => {
 	const [debouncedSearchQuery] = useDebounce(searchQuery, delay);
 
 	useEffect(() => {
-		console.log('characters.length', characters);
-		console.log('initialCharacterList', initialCharacterList);
-		console.log('debouncedSearchQuery', debouncedSearchQuery);
+		console.log('EFFECTO');
 
-		if (!debouncedSearchQuery) {
-			console.log('1');
+		if (!debouncedSearchQuery && initialCharacterList.length) {
+			console.log('|||| skip fetching');
 
-			if (!initialCharacterList.length) {
-				setIsLoading(true);
-				fetchCharacters(debouncedSearchQuery).then((characters) => {
-					setIsLoading(false);
-					setInitialCharacterList(characters);
-					setCharacters(characters);
-				});
-			} else {
-				console.log('2');
-
-				setCharacters(initialCharacterList);
-			}
-		} else {
-			console.log('3');
+			setCharacters(initialCharacterList);
+		}
+		if (!debouncedSearchQuery && !initialCharacterList.length) {
+			console.log('|||| fetching inicial');
+			setIsLoading(true);
+			fetchCharacters(debouncedSearchQuery).then((characters) => {
+				setIsLoading(false);
+				setInitialCharacterList(characters);
+				setCharacters(characters);
+			});
+		}
+		if (debouncedSearchQuery) {
+			console.log('|||| fetching de busqueda');
 
 			setIsLoading(true);
-			fetchCharacters(debouncedSearchQuery)
-				.then(setCharacters)
-				.then(() => setIsLoading(false));
+			fetchCharacters(debouncedSearchQuery).then((characters) => {
+				setIsLoading(false);
+				setCharacters(characters);
+			});
 		}
 	}, [debouncedSearchQuery]);
 
