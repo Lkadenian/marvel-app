@@ -6,6 +6,7 @@ import Header from './Header/Header';
 import CharacterInfo from './CharacterInfo/CharacterInfo';
 import Heart from './Heart/Heart';
 import ContentWrapper from './ContentWrapper/ContentWrapper';
+import ProgressBar from './ProgressBar/ProgressBar';
 
 export {
 	CharacterCard,
@@ -16,4 +17,5 @@ export {
 	CharacterInfo,
 	Heart,
 	ContentWrapper,
+	ProgressBar,
 };

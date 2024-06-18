@@ -19,7 +19,7 @@
 			"@layouts": ["./presentation/layouts"],
 			"@pages/*": ["./presentation/pages/*"],
 			"@utils/*": ["./presentation/utils/*"],
-			"@context/*": ["./context/*"],
+			"@context": ["./context"],
 			"@mappers/*": ["./infrastructure/mappers/*"],
 			"@infrastructure/*": ["./infrastructure/*"]
 		}

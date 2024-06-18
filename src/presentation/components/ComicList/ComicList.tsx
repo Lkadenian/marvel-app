@@ -10,7 +10,7 @@ const ComicList: React.FC<ComicListProps> = ({ comics }) => {
 	return (
 		<>
 			{comics.map((comic) => (
-				<div className={styles.comic}>
+				<div className={styles.comic} key={comic.id}>
 					<img src={comic.thumbnail} alt={comic.title} />
 					<div>
 						<p className={styles.title}>{comic.title}</p>

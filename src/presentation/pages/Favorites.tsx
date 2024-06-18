@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { useFavorites } from '@context/favorites';
+import { useFavorites } from '@context';
 import { CharacterList, SearchBar } from '@components';
 import { CharacterListSection } from '@layouts';
 

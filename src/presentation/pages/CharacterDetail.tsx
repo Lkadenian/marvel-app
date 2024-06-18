@@ -4,13 +4,18 @@ import { Character } from '@utils/types';
 import { fetchCharacterById } from '@infrastructure/api';
 import { Header, ComicList, CharacterInfo } from '@components';
 import { CharacterSection, ComicListSection } from '@layouts';
+import { useLoading } from '@context';
 
 const CharacterDetailPage: React.FC = () => {
 	const { id } = useParams<{ id: string }>();
 	const [character, setCharacter] = useState<Character>();
+	const { setIsLoading } = useLoading();
 
 	useEffect(() => {
-		fetchCharacterById(id).then(setCharacter);
+		setIsLoading(true);
+		fetchCharacterById(id)
+			.then(setCharacter)
+			.then(() => setIsLoading(false));
 	}, [setCharacter]);
 
 	return (

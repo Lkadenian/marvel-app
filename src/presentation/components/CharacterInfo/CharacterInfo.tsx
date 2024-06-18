@@ -1,7 +1,7 @@
 import React from 'react';
 import { Character } from '@utils/types';
 import { Heart } from '@components';
-import { useFavorites } from '@context/favorites';
+import { useFavorites } from '@context';
 import * as styles from './CharacterInfo.module.css';
 
 interface CharacterInfoProps {

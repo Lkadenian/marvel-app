@@ -1,10 +1,10 @@
 import React from 'react';
-import useCharacterSearch from '@hooks/useCharacterSearch';
+import useCharactersFetch from '@hooks/useCharactersFetch';
 import { CharacterListSection } from '@layouts';
 import { CharacterList, SearchBar } from '@components';
 
 const Characters: React.FC = () => {
-	const { characters, searchQuery } = useCharacterSearch(600);
+	const { characters, searchQuery } = useCharactersFetch(600);
 
 	return (
 		<CharacterListSection>
