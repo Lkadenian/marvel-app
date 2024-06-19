@@ -59,3 +59,9 @@
 .card:hover .heartWrapper {
 	fill: var(--clr-secondary);
 }
+
+@media (max-width: 834px) {
+	.card {
+		width: 172.5px;
+	}
+}

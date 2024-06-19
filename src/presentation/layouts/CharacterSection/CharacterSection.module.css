@@ -3,10 +3,11 @@
 	justify-content: center;
 	align-items: center;
 	height: 320px;
+	position: relative;
 	background-color: var(--clr-bg-secondary);
 }
 
-.container ::after {
+.container::after {
 	content: '';
 	position: absolute;
 	bottom: 0px;
@@ -17,6 +18,28 @@
 
 .characterSection {
 	width: var(--inner-container-width);
+	padding: 0 48px;
 	height: 100%;
 	display: flex;
+}
+
+@media (max-width: 834px) {
+	.container {
+		height: 278px;
+	}
+
+	.characterSection {
+		padding: 0 48px 0 0;
+	}
+}
+
+@media (max-width: 660px) {
+	.container {
+		height: auto;
+	}
+
+	.characterSection {
+		padding: 0;
+		flex-direction: column;
+	}
 }

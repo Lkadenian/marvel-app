@@ -7,7 +7,7 @@
 
 .nameWrapper {
 	display: flex;
-	align-items: baseline;
+	align-items: center;
 	justify-content: space-between;
 }
 
@@ -29,4 +29,21 @@
 	font-weight: 400;
 	line-height: 18.75px;
 	color: var(--clr-secondary);
+}
+
+@media (max-width: 834px) {
+	.info {
+		padding: 80px 0 0 48px;
+	}
+
+	.name {
+		font-size: 32px;
+		line-height: 37.5px;
+	}
+}
+
+@media (max-width: 660px) {
+	.info {
+		padding: 24px 16px 48px 16px;
+	}
 }

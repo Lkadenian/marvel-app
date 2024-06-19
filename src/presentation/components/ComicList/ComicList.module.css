@@ -19,3 +19,10 @@
 	line-height: 14.06px;
 	font-weight: 400;
 }
+
+@media (max-width: 834px) {
+	.comic {
+		min-width: 168px;
+		min-width: 168px;
+	}
+}
