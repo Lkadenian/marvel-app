@@ -20,9 +20,13 @@ const CharacterInfo: React.FC<CharacterInfoProps> = ({ character }) => {
 			<div className={styles.info}>
 				<div className={styles.nameWrapper}>
 					<h1 className={styles.name}>{name}</h1>
-					<a className={styles.heartWrapper} onClick={handleClick}>
+					<button
+						className={styles.heartWrapper}
+						onClick={handleClick}
+						aria-pressed={isFavorite(id)}
+					>
 						<Heart isFilled={isFavorite(id)} />
-					</a>
+					</button>
 				</div>
 				<p className={styles.description}>{description}</p>
 			</div>

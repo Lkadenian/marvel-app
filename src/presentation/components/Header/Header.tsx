@@ -12,7 +12,7 @@ const Header: React.FC = () => {
 	return (
 		<header className={styles.header}>
 			<Link to="/">
-				<img src={logo} alt="Logo" />
+				<img src={logo} alt="Marvel logo" />
 			</Link>
 			<div>
 				<Link to="/favorites" className={styles.favCounter}>

@@ -21,6 +21,8 @@
 
 .heartWrapper {
 	cursor: pointer;
+	border: none;
+	background: none;
 }
 
 .description {

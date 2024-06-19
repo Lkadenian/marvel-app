@@ -26,6 +26,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
 					<button
 						onClick={handleClick}
 						className={styles.heartWrapper}
+						aria-pressed={isFavorite(id)}
 					>
 						<Heart isFilled={isFavorite(id)} small />
 					</button>

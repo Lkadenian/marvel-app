@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, ContentWrapper } from '@components';
+import { ContentWrapper } from '@components';
 
 interface CharacterListSectionProps {
 	children: React.ReactNode;
@@ -8,12 +8,7 @@ interface CharacterListSectionProps {
 const CharacterListSection: React.FC<CharacterListSectionProps> = ({
 	children,
 }) => {
-	return (
-		<>
-			<Header />
-			<ContentWrapper>{children}</ContentWrapper>
-		</>
-	);
+	return <ContentWrapper>{children}</ContentWrapper>;
 };
 
 export default CharacterListSection;

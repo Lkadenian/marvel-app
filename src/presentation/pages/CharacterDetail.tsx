@@ -21,14 +21,12 @@ const CharacterDetailPage: React.FC = () => {
 	return (
 		<>
 			<Header />
-			<>
-				<CharacterSection>
-					{character && <CharacterInfo character={character} />}
-				</CharacterSection>
-				<ComicListSection>
-					{character && <ComicList comics={character.comics} />}
-				</ComicListSection>
-			</>
+			<CharacterSection>
+				{character && <CharacterInfo character={character} />}
+			</CharacterSection>
+			<ComicListSection>
+				{character && <ComicList comics={character.comics} />}
+			</ComicListSection>
 		</>
 	);
 };

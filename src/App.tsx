@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Characters from './presentation/pages/Characters';
-import Favorites from './presentation/pages/Favorites';
-import CharacterDetail from './presentation/pages/CharacterDetail';
+import Characters from '@pages/Characters';
+import Favorites from '@pages/Favorites';
+import CharacterDetail from '@pages/CharacterDetail';
+import NotFound from '@pages/NotFound';
 import {
 	FavoritesProvider,
 	CharactersProvider,
@@ -24,6 +25,7 @@ const App = () => {
 								element={<CharacterDetail />}
 							/>
 							<Route path="/favorites" element={<Favorites />} />
+							<Route path="*" element={<NotFound />} />
 						</Routes>
 					</Router>
 				</LoadingProvider>
