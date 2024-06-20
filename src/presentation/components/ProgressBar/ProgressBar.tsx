@@ -6,9 +6,13 @@ interface ProgressBarProps {
 }
 
 const ProgressBar: React.FC<ProgressBarProps> = ({ isLoading }) => {
+	if (!isLoading) {
+		return null;
+	}
+
 	return (
 		<div className={styles.progressBarWrapper}>
-			{isLoading && <div className={styles.progressBar} />}
+			<div className={styles.progressBar} />
 		</div>
 	);
 };

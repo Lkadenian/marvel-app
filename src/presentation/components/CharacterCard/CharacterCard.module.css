@@ -33,7 +33,6 @@
 .nameWrapper {
 	display: flex;
 	justify-content: space-between;
-	fill: var(--clr-marvel-red);
 }
 
 .name {

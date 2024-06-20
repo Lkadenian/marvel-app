@@ -11,9 +11,6 @@ const useCharactersFetch = () => {
 	const searchQuery = searchParams.get('search') || '';
 
 	useEffect(() => {
-		if (!searchQuery && initialCharacterList.length) {
-			setCharacters(initialCharacterList);
-		}
 		if (!searchQuery && !initialCharacterList.length) {
 			setIsLoading(true);
 			fetchCharacters(searchQuery).then((characters) => {
@@ -21,6 +18,9 @@ const useCharactersFetch = () => {
 				setInitialCharacterList(characters);
 				setCharacters(characters);
 			});
+		}
+		if (!searchQuery && initialCharacterList.length) {
+			setCharacters(initialCharacterList);
 		}
 		if (searchQuery) {
 			setIsLoading(true);

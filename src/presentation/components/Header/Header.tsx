@@ -14,12 +14,10 @@ const Header: React.FC = () => {
 			<Link to="/">
 				<img src={logo} alt="Marvel logo" />
 			</Link>
-			<div>
-				<Link to="/favorites" className={styles.favCounter}>
-					<Heart isFilled={favoritesCount > 0} />
-					{favoritesCount}
-				</Link>
-			</div>
+			<Link to="/favorites" className={styles.favCounter}>
+				<Heart isFilled={favoritesCount > 0} />
+				{favoritesCount}
+			</Link>
 			<div className={styles.progressBar}>
 				<ProgressBar isLoading={isLoading} />
 			</div>

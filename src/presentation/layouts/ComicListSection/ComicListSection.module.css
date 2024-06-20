@@ -4,7 +4,7 @@
 	align-items: center;
 }
 
-.ComicListSection {
+.comicListSection {
 	padding: 48px;
 	width: var(--inner-container-width);
 	max-width: 100%;
@@ -46,7 +46,7 @@
 }
 
 @media (max-width: 660px) {
-	.ComicListSection {
+	.comicListSection {
 		padding: 48px 16px;
 	}
 }

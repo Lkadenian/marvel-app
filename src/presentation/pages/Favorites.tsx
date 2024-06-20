@@ -18,7 +18,7 @@ const Favorites: React.FC = () => {
 					.includes(searchQuery.toLowerCase()),
 			),
 		);
-	}, [searchQuery]);
+	}, [favorites, searchQuery]);
 
 	return (
 		<>

@@ -6,7 +6,7 @@ import { Header, ComicList, CharacterInfo } from '@components';
 import { CharacterSection, ComicListSection } from '@layouts';
 import { useLoading } from '@context';
 
-const CharacterDetailPage: React.FC = () => {
+const CharacterDetail: React.FC = () => {
 	const { id } = useParams<{ id: string }>();
 	const [character, setCharacter] = useState<Character>();
 	const { setIsLoading } = useLoading();
@@ -31,4 +31,4 @@ const CharacterDetailPage: React.FC = () => {
 	);
 };
 
-export default CharacterDetailPage;
+export default CharacterDetail;

@@ -13,6 +13,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
 	const { id, name, thumbnail } = character;
 	const { isFavorite, toggleFavorite } = useFavorites();
 
+	const isThisFavorite = isFavorite(id);
 	const handleClick = () => toggleFavorite(character);
 
 	return (
@@ -26,9 +27,9 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
 					<button
 						onClick={handleClick}
 						className={styles.heartWrapper}
-						aria-pressed={isFavorite(id)}
+						aria-pressed={isThisFavorite}
 					>
-						<Heart isFilled={isFavorite(id)} small />
+						<Heart isFilled={isThisFavorite} small />
 					</button>
 				</div>
 			</div>

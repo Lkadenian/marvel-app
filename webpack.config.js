@@ -25,15 +25,12 @@ module.exports = (env, argv) => {
 					use: [
 						{
 							loader: 'style-loader',
-							options: {
-								esModule: false,
-							},
+							options: { injectType: 'styleTag' },
 						},
 						{
 							loader: 'css-loader',
 							options: {
-								esModule: false,
-								modules: {},
+								modules: true,
 							},
 						},
 					],

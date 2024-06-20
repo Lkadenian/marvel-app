@@ -10,7 +10,7 @@ interface CharacterListProps {
 const CharacterList: React.FC<CharacterListProps> = ({ characters }) => {
 	return (
 		<div className={styles.listWrapper}>
-			{characters.map((character: any) => (
+			{characters.map((character) => (
 				<CharacterCard key={character.id} character={character} />
 			))}
 		</div>
