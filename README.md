@@ -169,7 +169,7 @@ Setting up the development environment is very straightforward
 
 ## Testing
 
-Testing is implemented using Jest and React Testing Library (`npm test`). Unit tests are located in respective `__tests__` directories under `pages` and inside each `component`.
+Testing is implemented using Jest and React Testing Library (`npm test`). Unit tests are located in respective `__tests__` directories under `pages` and inside each `component`. The project maintains a test coverage of over 90%, ensuring comprehensive testing of components and application logic.
 
 ## Accessibility
 
@@ -178,8 +178,6 @@ The application ensures accessibility by using semantic HTML, alt attributes for
 ## Linting and Code Quality
 
 Linting is managed with ESLint and Prettier to maintain code quality (`npm run lint`). Configuration files (`.eslintrc`, `.prettierrc`) are included in the project root. TypeScript support is integrated to enhance type safety and development efficiency.
-
-Unit testing is implemented using Jest and React Testing Library (`npm test`). The project maintains a test coverage of over 90%, ensuring comprehensive testing of components and application logic.
 
 ## Usage
 
