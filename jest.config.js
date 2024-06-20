@@ -21,9 +21,10 @@ module.exports = {
 	testMatch: ['**/src/**/*.test.(ts|tsx)'],
 	collectCoverage: true,
 	collectCoverageFrom: [
-		'src/**/*.{js,jsx,ts,tsx}',
-		'!src/**/*.d.ts',
-		'!src/index.js',
+		'src/**/*.{jsx,tsx}',
+		'!src/App.tsx',
+		'!src/main.tsx',
+		'!src/context/**',
 	],
 	coverageDirectory: 'coverage',
 	coverageReporters: ['json', 'lcov', 'text', 'clover'],

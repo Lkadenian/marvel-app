@@ -9,6 +9,7 @@ jest.mock('@context', () => ({
 	useFavorites: jest.fn(),
 }));
 jest.mock('@components', () => ({
+	...jest.requireActual('@components'),
 	Header: () => <div>Header</div>,
 	CharacterList: ({ characters }: { characters: Character[] }) => (
 		<div>{characters.map((character) => character.name).join(', ')}</div>
