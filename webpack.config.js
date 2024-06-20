@@ -23,14 +23,16 @@ module.exports = (env, argv) => {
 				{
 					test: /\.css$/,
 					use: [
-						{
-							loader: 'style-loader',
-							options: { injectType: 'styleTag' },
-						},
+						'style-loader',
 						{
 							loader: 'css-loader',
 							options: {
 								modules: true,
+								modules: {
+									localIdentName: isDevelopment
+										? '[name]__[local]'
+										: '[hash:base64]',
+								},
 							},
 						},
 					],
@@ -46,7 +48,9 @@ module.exports = (env, argv) => {
 						{
 							loader: 'file-loader',
 							options: {
-								name: '[name].[hash].[ext]',
+								name: isDevelopment
+									? '[path][name].[ext]'
+									: '[name].[hash].[ext]',
 								outputPath: 'assets',
 							},
 						},
@@ -89,7 +93,8 @@ module.exports = (env, argv) => {
 			historyApiFallback: true,
 		},
 		optimization: {
-			minimize: !isDevelopment, // disable minification in development mode
+			minimize: !isDevelopment,
 		},
+		mode: argv.mode,
 	};
 };

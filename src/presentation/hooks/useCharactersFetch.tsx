@@ -11,23 +11,23 @@ const useCharactersFetch = () => {
 	const searchQuery = searchParams.get('search') || '';
 
 	useEffect(() => {
-		if (!searchQuery && !initialCharacterList.length) {
+		if (searchQuery !== '') {
+			setIsLoading(true);
+			fetchCharacters(searchQuery).then((characters) => {
+				setIsLoading(false);
+				setCharacters(characters);
+			});
+			return;
+		}
+		if (!initialCharacterList.length) {
 			setIsLoading(true);
 			fetchCharacters(searchQuery).then((characters) => {
 				setIsLoading(false);
 				setInitialCharacterList(characters);
 				setCharacters(characters);
 			});
-		}
-		if (!searchQuery && initialCharacterList.length) {
+		} else {
 			setCharacters(initialCharacterList);
-		}
-		if (searchQuery) {
-			setIsLoading(true);
-			fetchCharacters(searchQuery).then((characters) => {
-				setIsLoading(false);
-				setCharacters(characters);
-			});
 		}
 	}, [searchQuery]);
 
