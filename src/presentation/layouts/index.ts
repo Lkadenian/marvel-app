@@ -1,4 +1,4 @@
-import CharacterListSection from './CharaceterListSection/CharacterListSection';
+import CharacterListSection from './CharacterListSection/CharacterListSection';
 import CharacterSection from './CharacterSection/CharacterSection';
 import ComicListSection from './ComicListSection/ComicListSection';
 

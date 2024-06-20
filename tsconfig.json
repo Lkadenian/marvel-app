@@ -12,14 +12,15 @@
 		"noUnusedParameters": true,
 		"baseUrl": "./src",
 		"paths": {
+			"@domain": ["./domain"],
 			"@assets/*": ["./presentation/assets/*"],
 			"@components": ["./presentation/components"],
 			"@globals/*": ["./presentation/globals/*"],
-			"@hooks/*": ["./presentation/hooks/*"],
 			"@layouts": ["./presentation/layouts"],
 			"@pages/*": ["./presentation/pages/*"],
 			"@utils/*": ["./presentation/utils/*"],
-			"@context": ["./context"],
+			"@context": ["./application/context"],
+			"@hooks/*": ["./application/hooks/*"],
 			"@mappers/*": ["./infrastructure/mappers/*"],
 			"@infrastructure/*": ["./infrastructure/*"]
 		}

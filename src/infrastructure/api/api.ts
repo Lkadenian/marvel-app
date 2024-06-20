@@ -1,14 +1,14 @@
-import { ApiResponse } from './mappers/characters/characterDataTypes';
-import { ApiComicResponse } from './mappers/comics/comicDataTypes';
-import { Character, Comic } from '@utils/types';
+import { ApiResponse } from '../mappers/characters/characterDataTypes';
+import { ApiComicResponse } from '../mappers/comics/comicDataTypes';
+import { Character, Comic } from '@domain';
 import {
 	characterFetchLimit,
 	comicsFetchLimit,
 	comicsOrderBy,
 } from './constants';
-import { mapCharacterData } from './mappers/characters/CharacterMapper';
-import { mapComicData } from './mappers/comics/ComicMapper';
-import { fetchData, generateUrl } from './utils/apiHelpers';
+import { mapCharacterData } from '../mappers/characters/CharacterMapper';
+import { mapComicData } from '../mappers/comics/ComicMapper';
+import { fetchData, generateUrl } from '../utils/apiHelpers';
 
 export const fetchCharacters = async (
 	searchQuery?: string,

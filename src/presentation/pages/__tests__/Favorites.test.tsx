@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import Favorites from '../Favorites';
 import { useFavorites } from '@context';
-import { Character } from '@utils/types';
+import { Character } from '@domain';
 
 jest.mock('@context', () => ({
 	useFavorites: jest.fn(),

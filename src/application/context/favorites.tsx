@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext, ReactNode } from 'react';
-import { Character } from '@utils/types';
+import { Character } from '@domain';
 
 interface CharacterContextType {
 	favorites: Character[];

@@ -2,12 +2,12 @@ import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import CharacterDetail from '../CharacterDetail';
-import { fetchCharacterById } from '@infrastructure/api';
+import { fetchCharacterById } from '@infrastructure/api/api';
 import { useLoading } from '@context';
 import { mockCharacter } from '@utils/mock-data';
-import { Character, Comic } from '@utils/types';
+import { Character, Comic } from '@domain';
 
-jest.mock('@infrastructure/api');
+jest.mock('@infrastructure/api/api');
 jest.mock('@context', () => ({
 	useLoading: jest.fn(),
 }));

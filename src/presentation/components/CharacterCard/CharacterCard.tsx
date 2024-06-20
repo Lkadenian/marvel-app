@@ -1,6 +1,6 @@
 import React from 'react';
 import { Heart } from '@components';
-import { Character } from '@utils/types';
+import { Character } from '@domain';
 import { useFavorites } from '@context';
 import { Link } from 'react-router-dom';
 import * as styles from './CharacterCard.module.css';

@@ -1,4 +1,4 @@
-import { Character, Comic } from './types';
+import { Character, Comic } from '@domain';
 
 export const mockComicList: Comic[] = [
 	{

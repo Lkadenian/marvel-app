@@ -61,6 +61,7 @@ module.exports = (env, argv) => {
 		resolve: {
 			extensions: ['.js', '.jsx', '.ts', '.tsx'],
 			alias: {
+				'@domain': path.resolve(__dirname, 'src/domain/'),
 				'@assets': path.resolve(__dirname, 'src/presentation/assets/'),
 				'@components': path.resolve(
 					__dirname,
@@ -70,14 +71,14 @@ module.exports = (env, argv) => {
 					__dirname,
 					'src/presentation/layouts/',
 				),
-				'@hooks': path.resolve(__dirname, 'src/presentation/hooks/'),
 				'@globals': path.resolve(
 					__dirname,
 					'src/presentation/globals/',
 				),
 				'@pages': path.resolve(__dirname, 'src/presentation/pages/'),
 				'@utils': path.resolve(__dirname, 'src/presentation/utils/'),
-				'@context': path.resolve(__dirname, 'src/context/'),
+				'@context': path.resolve(__dirname, 'src/application/context/'),
+				'@hooks': path.resolve(__dirname, 'src/application/hooks/'),
 				'@mappers': path.resolve(
 					__dirname,
 					'src/infrastructure/mappers/',

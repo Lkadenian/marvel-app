@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { fetchCharacters } from '@infrastructure/api';
+import { fetchCharacters } from '@infrastructure/api/api';
 import { useCharacters, useLoading } from '@context';
+import { Character } from '@domain';
 
-const useCharactersFetch = () => {
+const useFetchCharacters = (): Character[] => {
 	const { initialCharacterList, setInitialCharacterList } = useCharacters();
 	const { setIsLoading } = useLoading();
 	const [characters, setCharacters] = useState(initialCharacterList);
@@ -31,9 +32,7 @@ const useCharactersFetch = () => {
 		}
 	}, [searchQuery]);
 
-	return {
-		characters,
-	};
+	return characters;
 };
 
-export default useCharactersFetch;
+export default useFetchCharacters;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Comic } from '@utils/types';
+import { Comic } from '@domain';
 import * as styles from './ComicList.module.css';
 
 interface ComicListProps {

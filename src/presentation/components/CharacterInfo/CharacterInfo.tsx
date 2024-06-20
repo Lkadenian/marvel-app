@@ -1,5 +1,5 @@
 import React from 'react';
-import { Character } from '@utils/types';
+import { Character } from '@domain';
 import { Heart } from '@components';
 import { useFavorites } from '@context';
 import * as styles from './CharacterInfo.module.css';

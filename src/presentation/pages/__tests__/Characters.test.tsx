@@ -2,8 +2,8 @@ import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import Characters from '../Characters';
-import { Character } from '@utils/types';
-import { fetchCharacters } from '@infrastructure/api';
+import { Character } from '@domain';
+import { fetchCharacters } from '@infrastructure/api/api';
 import { mockCharacterList } from '@utils/mock-data';
 import { useLoading, useCharacters } from '@context';
 
@@ -11,7 +11,7 @@ jest.mock('@context', () => ({
 	useCharacters: jest.fn(),
 	useLoading: jest.fn(),
 }));
-jest.mock('@infrastructure/api', () => ({
+jest.mock('@infrastructure/api/api', () => ({
 	fetchCharacters: jest.fn(),
 }));
 jest.mock('@components', () => ({
