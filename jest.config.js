@@ -25,7 +25,7 @@ module.exports = {
 		'src/**/*.{jsx,tsx}',
 		'!src/App.tsx',
 		'!src/main.tsx',
-		'!src/context/**',
+		'!src/application/**',
 	],
 	coverageDirectory: 'coverage',
 	coverageReporters: ['json', 'lcov', 'text', 'clover'],
