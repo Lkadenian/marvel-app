@@ -4,7 +4,7 @@ import tseslint from 'typescript-eslint';
 import pluginReactConfig from 'eslint-plugin-react/configs/recommended.js';
 
 export default [
-	{ files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
+	{ files: ['**/*.{ts,jsx,tsx}'] },
 	{
 		ignores: [
 			'src/declarations.d.ts',
@@ -12,7 +12,6 @@ export default [
 		],
 	},
 	{ languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } } },
-	{ files: ['**/*.js'], languageOptions: { sourceType: 'commonjs' } },
 	{ languageOptions: { globals: globals.browser } },
 	{
 		settings: {

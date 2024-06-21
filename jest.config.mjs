@@ -1,9 +1,9 @@
-module.exports = {
+export default {
 	setupFilesAfterEnv: ['<rootDir>src/setupTests.ts'],
 	testEnvironment: 'jsdom',
 	transform: {
 		'^.+\\.tsx?$': 'ts-jest',
-		'\\.(svg)$': '<rootDir>/svgTransform.js',
+		'\\.(svg)$': '<rootDir>/svgTransform.mjs',
 	},
 	moduleNameMapper: {
 		'\\.(css|less)$': 'identity-obj-proxy',

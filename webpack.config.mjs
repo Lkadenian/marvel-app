@@ -1,8 +1,14 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const Dotenv = require('dotenv-webpack');
+import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import Dotenv from 'dotenv-webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
-module.exports = (env, argv) => {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+export default (env, argv) => {
 	const isDevelopment = argv.mode === 'development';
 	return {
 		entry: './src/main.tsx',
@@ -17,17 +23,22 @@ module.exports = (env, argv) => {
 				filename: 'index.html',
 			}),
 			new Dotenv(),
-		],
+			!isDevelopment &&
+				new MiniCssExtractPlugin({
+					filename: '[name].[contenthash].css',
+				}),
+		].filter(Boolean),
 		module: {
 			rules: [
 				{
 					test: /\.css$/,
 					use: [
-						'style-loader',
+						isDevelopment
+							? 'style-loader'
+							: MiniCssExtractPlugin.loader,
 						{
 							loader: 'css-loader',
 							options: {
-								modules: true,
 								modules: {
 									localIdentName: isDevelopment
 										? '[name]__[local]'
