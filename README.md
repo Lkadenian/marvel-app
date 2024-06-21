@@ -20,6 +20,10 @@ This application allows users to explore information about Marvel characters and
 
 This project implements a React-based web application that fetches Marvel character data from the Marvel API and displays it in accordance with specified designs.
 
+## Deployment
+
+The application has been deployed and can be consulted at the following URL: [https://marvel-directory.vercel.app/](https://marvel-directory.vercel.app/)
+
 ## File Structure
 
 <details>
@@ -163,6 +167,7 @@ The application's design is based on Figma designs provided for mobile and deskt
 
 Setting up the development environment is very straightforward
 
+-   **Environment variables**: Rename `.env.example` to `.env` and provide the variables with the appropiate values according to the [Marvel API guidelines](https://developer.marvel.com/documentation/getting_started)
 -   **Dependencies**: Ensure Node.js and dependencies from `package.json` are installed (`npm install`).
 -   **Start Development**: Run `npm start` to launch the application in development mode using webpack dev server.
 -   **Build**: Generate a production build with `npm run build`.
