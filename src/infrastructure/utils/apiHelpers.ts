@@ -1,5 +1,8 @@
 import { md5 } from 'js-md5';
-import { publicKey, privateKey, baseUrl } from '@infrastructure/api/constants';
+import { baseUrl } from '@infrastructure/api/constants';
+
+export const publicKey = process.env.MARVEL_PUBLIC_KEY;
+export const privateKey = process.env.MARVEL_PRIVATE_KEY;
 
 export const generateHash = (timestamp: string) => {
 	const hashInput = timestamp + privateKey + publicKey;
