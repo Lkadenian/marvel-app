@@ -1,11 +1,9 @@
-const path = require('path');
-
 module.exports = {
-	setupFilesAfterEnv: [path.resolve(__dirname, 'src/setupTests.ts')],
+	setupFilesAfterEnv: ['<rootDir>src/setupTests.ts'],
 	testEnvironment: 'jsdom',
 	transform: {
 		'^.+\\.tsx?$': 'ts-jest',
-		'\\.(svg)$': '<rootDir>/config/svgTransform.js',
+		'\\.(svg)$': '<rootDir>/svgTransform.js',
 	},
 	moduleNameMapper: {
 		'\\.(css|less)$': 'identity-obj-proxy',
