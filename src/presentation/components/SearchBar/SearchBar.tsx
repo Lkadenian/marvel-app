@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import * as styles from './Searchbar.module.css';
+import * as styles from './SearchBar.module.css';
 import { useDebounce } from 'use-debounce';
 import searchIcon from '@assets/svg/search.svg';
 
