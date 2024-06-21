@@ -182,7 +182,7 @@ The application ensures accessibility by using semantic HTML, alt attributes for
 
 ## Linting and Code Quality
 
-Linting is managed with ESLint and Prettier to maintain code quality (`npm run lint`). Configuration files (`.eslintrc`, `.prettierrc`) are included in the project root. TypeScript support is integrated to enhance type safety and development efficiency.
+Linting is managed with ESLint and Prettier to maintain code quality (`npm run lint`). Configuration files (`.eslint.config`, `.prettierrc`) are included in the project root. TypeScript support is integrated to enhance type safety and development efficiency.
 
 ## Usage
 

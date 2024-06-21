@@ -4,7 +4,7 @@ import { fetchCharacterById } from '@infrastructure/api/api';
 import { Character } from '@domain';
 import { useLoading } from '@context';
 
-const useFetchCharacterDetail = ():Character => {
+const useFetchCharacterDetail = (): Character => {
 	const { id } = useParams<{ id: string }>();
 	const [character, setCharacter] = useState<Character>();
 	const { setIsLoading } = useLoading();
