@@ -16,7 +16,7 @@ export const mapCharacterData = (
 		id: character.id.toString(),
 		name: character.name,
 		description: character.description,
-		thumbnail: `${character.thumbnail.path}/${imageType}.${character.thumbnail.extension}`,
+		thumbnail: `${character.thumbnail.path.replace('http://', 'https://')}/${imageType}.${character.thumbnail.extension}`,
 		comics: comics,
 	}));
 };

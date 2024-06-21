@@ -14,6 +14,6 @@ export const mapComicData = (data: Result[]): Comic[] => {
 		id: comic.id.toString(),
 		title: comic.title,
 		year: getOnSaleYear(comic.dates),
-		thumbnail: `${comic.thumbnail.path}/${comicImageVariant}.${comic.thumbnail.extension}`,
+		thumbnail: `${comic.thumbnail.path.replace('http://', 'https://')}/${comicImageVariant}.${comic.thumbnail.extension}`,
 	}));
 };
